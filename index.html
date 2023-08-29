@@ -16,10 +16,16 @@
         <h2 class="text-3xl"> Hunting Phone</h2>
     </header>
 
-    <main>
-        <section>
-            <div></div>
-            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+    <main class="container w-11/12 mx-auto mt-8">
+        <section class="flex justify-center my-5 bg-orange-400 items-center py-4">
+            <input id="search-field" type="text" placeholder="search....." class="input input-bordered w-full max-w-xs border-none" />
+            <button id="" onclick="handleSearch()" class="btn btn-neutral text-white ">Search</button>
+
+        </section>
+        
+        <!-- search result -->
+        <section class="my-10">
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
                 <!-- <div class="card w-96 bg-gray-200 shadow-xl">
                     <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div class="card-body">
