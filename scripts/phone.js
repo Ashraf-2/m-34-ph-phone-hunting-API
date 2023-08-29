@@ -5,14 +5,30 @@ const loadPhone = async (SearchText) => {
     const phones = data.data;
     // const phones = data.data;
     // console.log(phones);
-    displayPhones(phones);
+    displayPhones(phones,SearchText);
 }
-const displayPhones = phones_p => {
+const displayPhones = (phones_p,SearchText_p) => {
     // console.log(parameter);
     const phoneContainerElement = document.getElementById('phone-container');
-
-    //s-5: clear phone container cards before
+    
+    //s-5: clear phone container cards before and search area 
     phoneContainerElement.textContent='';
+
+    console.log(`number of ${SearchText_p}: ${phones_p.length}`);
+    //create h2 for showing the number of phones
+
+    //display show all button if there sare more than 12 phones
+    const showAllDiv = document.getElementById('show-all-div');
+    if(phones_p.length >= 12){
+        showAllDiv.classList.remove('hidden');
+    }
+    else{
+        showAllDiv.classList.add('hidden');
+    }
+    
+    //display only first 12 phones
+    phones_p = phones_p.slice(0,12);                 //to show the number of arrays of phones.not all the phones 
+
     phones_p.forEach(phone => {
         console.log(phone)
         // s-2: create div
@@ -49,6 +65,12 @@ const handleSearch = () =>{
     // searchText='';
 }
 
+const handleSearch2 = () =>{
+    const searchField2 = document.getElementById('search-field2');
+    const searchText2 = searchField2.value;
+    loadPhone(searchText2);
+
+}
 
 
 
