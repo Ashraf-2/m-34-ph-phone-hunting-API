@@ -18,14 +18,16 @@
 
     <main class="container w-11/12 mx-auto mt-8">
         <section id="search-area" class="flex justify-center my-5 bg-orange-400 items-center py-4">
-            <input id="search-field" type="text" placeholder="search....." class="input input-bordered w-full max-w-xs border-none" />
+            <input id="search-field" type="text" placeholder="search....."
+                class="input input-bordered w-full max-w-xs border-none" />
             <button id="" onclick="handleSearch()" class="btn btn-neutral text-white ">Search</button>
-            <input id="search-field2" type="text" placeholder="search here....." class="input input-bordered w-full max-w-xs border-none ml-3" >
+            <!-- handle search 2 recap -->
+            <!-- <input id="search-field2" type="text" placeholder="search here....." class="input input-bordered w-full max-w-xs border-none ml-3" >
             <button onclick="handleSearch2()" class="btn btn-primary bg-blue-500 border-none text-white">Search</button>
-            <br>
+            <br> -->
         </section>
-        
-        
+
+
         <!-- search result -->
         <section class="my-10">
             <!-- spinner or loader -->
@@ -46,13 +48,33 @@
             </div>
 
             <!-- show all button -->
-            <div id="show-all-div" class="hidden mt-10">
-                <button class="btn border-none bg-emerald-600 text-black">Show All</button>
+            <div id="show-all-div" class="hidden text-center mt-10">
+                <button onclick="handleShowAll()" class="btn border-none bg-emerald-600 text-black">Show All</button>
             </div>
         </section>
+        <!-- show details modal -->
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal">
+            <form method="dialog" class="modal-box">
+                <h3 id="phn_name" class="font-bold text-3xl"></h3>
+                <div id="show-detail-container">
+
+                </div>
+            
+            </form>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+
+
+
+
+
     </main>
 
-    
+
     <footer>
     </footer>
 
